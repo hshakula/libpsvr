@@ -283,6 +283,9 @@ int psvr_read_sync_timeout(enum morpheus_usb_interfaces interface, psvr_context 
 	);
 
 	if (err != LIBUSB_SUCCESS) {
+		if (err == LIBUSB_ERROR_TIMEOUT && timeout > 0) {
+			return xferred;
+		}
 		return err;
 	}
 
