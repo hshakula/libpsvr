@@ -13,7 +13,7 @@ enum psvr_unsolicited_report_code {
 union psvr_unsolicited_report_union {
 	struct psvr_unsolicited_report_struct {
 		uint8_t id;
-		enum psvr_unsolicited_report_code code;
+		uint8_t code; // psvr_unsolicited_report_code
 		uint8_t message[58];
 
 	#ifdef __cplusplus  
